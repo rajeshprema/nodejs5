@@ -1,0 +1,24 @@
+.loginForm{
+    margin-left: 540px;
+    margin-top: 30px;
+}
+.loginButton{
+    align-items: center;
+    margin-left:95px ;
+
+}
+.SingUpButton{
+margin-left: 600px;
+}
+.forgotpassword{
+    margin-left: 195px;
+    top: 10px;
+}
+.error{
+    height: 90px ;
+    width: 90px;
+
+    
+    
+    
+}

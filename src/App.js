@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
 
+import  { Routes,Route } from "react-router-dom";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Home from "./Components/Home";
+import Login from "./Components/Login.js";
+import SignUp from "./Components/SignUp.js";
+import Forgotpassword from "./Components/Forgotpassword.js";
+
+import ResetPassword from "./Components/ResetPassword.js"
+import { useState } from "react";
+import { ToastContainer } from "react-toastify";
 function App() {
+  
+
+  const [userDetails] = useState({
+    name: "rajesh",
+    Email: "rajesh@gmail.com",
+    Password: "12345",
+  });
+  const [userLogin] = useState({
+    
+    username: "rajesh",
+    Email: "raj@gmail.com",
+    Password: "4576"
+    
+    
+    
+  }
+)
+  
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToastContainer />
+      {/* <Home/> */}
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Login" element={<Login userDetails={userDetails} />} />
+        <Route path="/SignUp" element={<SignUp userLogin={userLogin} />} />
+        <Route path="/Forgotpassword" element={<Forgotpassword />} />
+        <Route path="/ResetPassword" element={<ResetPassword />} />
+      </Routes>
     </div>
   );
 }
